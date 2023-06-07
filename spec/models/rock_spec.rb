@@ -42,13 +42,13 @@ RSpec.describe Rock, type: :model do
   end
 
   it 'should not be valid with a enjoys that has at least 10 characters' do
-    cat = Cat.create(
+    rock = Rock.create(
       name: 'Rocky Balboa',
       age: "10,000",
-      enjoys: 'boxing ',
+      enjoys: 'boxing and training sequences',
       image: 'placeholder',
     )
-    expect(cat.errors[:enjoys]).to_not be_empty
+    expect(rock.errors[:enjoys]).to_not be_empty
   end
 
 

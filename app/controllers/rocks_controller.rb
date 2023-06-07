@@ -9,7 +9,7 @@ class RocksController < ApplicationController
         if rock.valid?
             render json: rock
          else
-            render json: rock.errors, status: 422
+            render json: rock.errors, status: :unprocessable_entity
         end
     end
 
