@@ -6,7 +6,11 @@ class RocksController < ApplicationController
 
     def create
         rock = Rock.create(rock_params)
-        render json: rock
+        if rock.valid?
+            render json: rock
+         else
+            render json: rock.errors, status: :unprocessable_entity
+        end
     end
 
     private
